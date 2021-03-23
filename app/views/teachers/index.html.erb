@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Teachers Details</h1>
+
+<table border="2px" class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Experience</th>
+      <th>Subject</th>
+      <th>Timing</th>
+      
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teachers.each do |teacher| %>
+      <tr>
+        <td><%= teacher.name %></td>
+        <td><%= teacher.age %></td>
+        <td><%= teacher.experience %></td>
+        <td><%= teacher.subject %></td>
+        <td><%= teacher.timing %></td>
+        
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="digg_pagination">
+<%= will_paginate @teachers %>
+</div>
+<br>
+
+<%= link_to 'New Teacher', new_teacher_path %>
